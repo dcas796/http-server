@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Api Test</title>
+    <link rel="stylesheet" href="/common.css">
+    <script type="text/javascript" src="/api-test/main.js"></script>
+</head>
+<body>
+    <h1>API Test</h1>
+    <p>Enter a message to be sent to the <code>echo</code> API endpoint.</p>
+    <form action="javascript:make_request()">
+        <label for="message-input">Message: </label>
+        <input id="message-input" type="text" placeholder="Type your message here">
+        <input type="submit">
+    </form>
+    <div id="response-container" style="display: none;">
+        <p>Response from API:</p>
+        <code id="response-text"></code>
+    </div>
+    <br>
+    <a href="/">Go to homepage</a>
+</body>
+</html>

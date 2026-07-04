@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/common.css">
+    <script type="text/javascript" src="/login/main.js" defer></script>
+</head>
+<body>
+    <h1>Login</h1>
+    <p>Enter your username and password to log in.</p>
+    <form action="javascript:login()">
+        <label for="username-input">Username: </label>
+        <input id="username-input" type="text" placeholder="Enter your username">
+        <br><br>
+        <label for="password-input">Password: </label>
+        <input id="password-input" type="password" placeholder="Enter your password">
+        <br><br>
+        <input type="submit">
+    </form>
+    <div id="response-container" style="display: none;">
+        <p>Response from server:</p>
+        <code id="response-text"></code>
+    </div>
+    <br>
+    <a href="/">Go to homepage</a>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logout</title>
+    <link rel="stylesheet" href="/common.css">
+    <script type="text/javascript">
+        fetch("/api/logout")
+            .then(response => response.json())
+            .then(json => {
+                if (json.status === "success") {
+                    window.location.href = "/"
+                } else {
+                    const loggingOutMsgEl = document.querySelector("#logged-out-msg")
+                    loggingOutMsgEl.style.display = "none"
+                    const errorContainerEl = document.querySelector("#error-container")
+                    errorContainerEl.style.display = "block"
+                    const errorMsgEl = document.querySelector("#error-msg")
+                    errorMsgEl.innerHTML = json.message
+                }
+            })
+    </script>
+</head>
+<body>
+    <p id="logging-out-msg">You are being logged out...</p>
+    <div id="error-container" style="display: none;">
+        <br>
+        <p>There was an error being logged out:</p>
+        <br>
+        <code id="error-msg"></code>
+    </div>
+</body>
+</html>
