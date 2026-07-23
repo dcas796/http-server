@@ -1,0 +1,16 @@
+[package]
+name = "http-server-app"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+iced = { version = "0.14.0", features = ["tokio"], optional = true }
+tokio = { version = "1.52.3", features = ["macros", "rt", "rt-multi-thread", "io-std"], optional = true }
+tokio-util = { version = "0.7.18", features = ["codec"], optional = true }
+futures = { version = "0.3.32", optional = true }
+http-server-lib = { path = "../http-server-lib" }
+thiserror = "2.0.18"
+
+[features]
+gui = ["dep:iced"]
+nogui = ["dep:tokio", "dep:tokio-util", "dep:futures"]

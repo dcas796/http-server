@@ -1,0 +1,10 @@
+[package]
+name = "http-server-lib"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+thiserror = "2.0.18"
+tokio = { version = "1.52.3", features = ["net", "rt", "rt-multi-thread", "io-util"] }
+uuid = { version = "1.23.1", features = ["v4"] }
+sha256 = "1.6.0"
